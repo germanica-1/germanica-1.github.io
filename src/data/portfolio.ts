@@ -8,7 +8,8 @@ export interface Project {
   title: string
   description: string
   technologies: string[]
-  github: string
+  github?: string
+  live?: string
   featured?: boolean
 }
 
@@ -25,35 +26,48 @@ export const skillCategories: SkillCategory[] = [
     name: "Frontend",
     icon: "Monitor",
     skills: [
-      "React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui",
+      "React", "TypeScript", "JavaScript", "HTML", "CSS", "Vite",
+      "Tailwind CSS", "shadcn/ui", "Radix UI", "React Router",
+      "React Hook Form", "Zod", "Framer Motion", "Recharts", "TipTap",
     ],
   },
   {
     name: "Backend",
     icon: "Server",
     skills: [
-      "Python", "Flask", "REST APIs", "Supabase", "SQLite",
-      "Firebase", "JavaScript", "Node.js",
+      "Python", "FastAPI", "Flask", "REST APIs", "Pydantic", "Uvicorn",
+      "Supabase", "PostgreSQL", "SQLite", "Firebase", "Node.js",
+      "BeautifulSoup", "APScheduler", "Canvas LMS API",
     ],
   },
   {
     name: "AI & Computer Vision",
     icon: "Brain",
     skills: [
-      "FaceNet", "MTCNN", "OpenCV", "NumPy", "Google Gemini API", "MediaPipe",
+      "FaceNet", "MTCNN", "OpenCV", "MediaPipe", "face-api.js",
+      "NumPy", "Pandas", "Matplotlib", "Google Gemini API",
     ],
   },
   {
     name: "Tools & Hardware",
     icon: "Wrench",
     skills: [
-      "Git", "GitHub", "Linux", "Bash", "Raspberry Pi", "EmailJS",
-      "Web3Forms", "tmux", "Arduino", "ESP32", "Docker",
+      "Git", "GitHub", "Linux", "Bash", "tmux", "Docker", "Vercel", "uv",
+      "Typer", "Pygame", "Raspberry Pi", "RPi.GPIO", "Fingerprint Sensor",
+      "Arduino", "ESP32", "EmailJS", "Web3Forms",
     ],
   },
 ]
 
 export const projects: Project[] = [
+  {
+    title: "Pawi",
+    description:
+      "A structured student workspace that syncs Canvas courses, assignments, deadlines, and announcements into one place, with a calendar, task manager, rich-text notes, and workload analytics to keep academics organized.",
+    technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase", "shadcn/ui", "Recharts", "TipTap"],
+    live: "https://www.pawii.me",
+    featured: true,
+  },
   {
     title: "SeNT System",
     description:
@@ -104,6 +118,48 @@ export const projects: Project[] = [
       "A space-invader-style game built in Python featuring multiple levels, challenges, and entities — created as a school expo exhibit to entertain students.",
     technologies: ["Python", "Game Development"],
     github: "https://github.com/germanica-1/CodeSpire",
+  },
+  {
+    title: "FindBack Backend",
+    description:
+      "REST API powering a lost-and-found website for a client. Handles posts, comments, image uploads, and user profiles, with role-based permissions, admin user management, and audit logging.",
+    technologies: ["Python", "FastAPI", "Supabase", "Pydantic", "Uvicorn"],
+    github: "https://github.com/germanica-1/findback-backend",
+  },
+  {
+    title: "FaceSync",
+    description:
+      "The Raspberry Pi side of the SeNT System. Syncs face data from the database, runs facial recognition on the live camera feed, shows results on a monitor display, and sounds a buzzer on entry events.",
+    technologies: ["Python", "OpenCV", "NumPy", "Raspberry Pi", "RPi.GPIO"],
+    github: "https://github.com/germanica-1/Facesync-New",
+  },
+  {
+    title: "Access Control Challenge",
+    description:
+      "A security-themed decision-making mini-game inspired by Papers, Please — players act as a guard deciding who gets in. Built as a school expo exhibit and playable in the browser.",
+    technologies: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+    github: "https://github.com/germanica-1/Security-Simulation-Game",
+  },
+  {
+    title: "Facial Recognition Accuracy Test",
+    description:
+      "An evaluation tool that measures how accurately the FaceNet recognition pipeline identifies faces from my dataset across different head rotations and angles.",
+    technologies: ["Python", "FaceNet", "NumPy"],
+    github: "https://github.com/germanica-1/facial-recog-accuracy-test",
+  },
+  {
+    title: "Facial Recognition Twin Test",
+    description:
+      "A tester that checks whether the facial recognition system can tell identical twins apart, comparing multi-angle face embeddings (front, left, right, low) of each twin.",
+    technologies: ["Python", "FaceNet", "OpenCV", "NumPy"],
+    github: "https://github.com/germanica-1/facial-recog-twin-test",
+  },
+  {
+    title: "Hand Tracking with MediaPipe",
+    description:
+      "Experiments with MediaPipe's real-time hand tracking from a webcam feed, exploring landmark detection for use in future projects.",
+    technologies: ["Python", "MediaPipe", "OpenCV"],
+    github: "https://github.com/germanica-1/hand-tracking-w-mediapipe-testing",
   },
 ]
 

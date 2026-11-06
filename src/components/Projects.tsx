@@ -1,5 +1,5 @@
 import { useState, useMemo, useRef } from "react"
-import { Folder, Search, ChevronLeft, ChevronRight, X } from "lucide-react"
+import { Folder, Search, ChevronLeft, ChevronRight, X, ExternalLink } from "lucide-react"
 import { GithubIcon } from "./icons"
 import { SectionHeader } from "./SectionHeader"
 import { Badge } from "@/components/ui/badge"
@@ -170,10 +170,17 @@ export function Projects() {
                       className="flex-1 border-border text-muted-foreground hover:text-foreground hover:border-primary/40 gap-1.5 text-xs h-8"
                       asChild
                     >
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <GithubIcon className="w-3.5 h-3.5" />
-                        View on GitHub
-                      </a>
+                      {project.live ? (
+                        <a href={project.live} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-3.5 h-3.5" />
+                          Visit Site
+                        </a>
+                      ) : (
+                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                          <GithubIcon className="w-3.5 h-3.5" />
+                          View on GitHub
+                        </a>
+                      )}
                     </Button>
                   </div>
                 </div>
